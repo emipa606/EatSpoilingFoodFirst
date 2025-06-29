@@ -4,9 +4,8 @@ using Verse;
 
 namespace EatSpoilingFoodFirst;
 
-[HarmonyPatch(typeof(FoodUtility))]
-[HarmonyPatch("FoodOptimality")]
-internal static class FoodUtility_FoodOptimality_Patch
+[HarmonyPatch(typeof(FoodUtility), nameof(FoodUtility.FoodOptimality))]
+internal static class FoodUtility_FoodOptimality
 {
     private static void Postfix(Pawn eater, Thing foodSource, bool takingToInventory, ref float __result)
     {

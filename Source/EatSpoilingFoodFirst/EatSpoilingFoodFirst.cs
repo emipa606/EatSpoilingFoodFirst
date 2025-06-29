@@ -1,3 +1,4 @@
+using System.Reflection;
 using HarmonyLib;
 using Verse;
 
@@ -8,7 +9,6 @@ public static class EatSpoilingFoodFirst
 {
     static EatSpoilingFoodFirst()
     {
-        Log.Message("[EatSpoilingFoodFirst]: StartUp");
-        new Harmony("com.eat.spoiling.food.first.patch").PatchAll();
+        new Harmony("com.eat.spoiling.food.first.patch").PatchAll(Assembly.GetExecutingAssembly());
     }
 }
